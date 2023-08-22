@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block body %}
+    <div id="content">
+        {% include 'includes/search.html' %}
+
+        <div class="film-list">
+            {% for film in films %}
+                {% include 'includes/filmitem.html' %}
+            {% endfor %}
+
+        </div>
+        {% include 'includes/pagination.html' %}
+    </div>
+    {% include 'includes/footer.html' %}
+{% endblock %}

@@ -1,0 +1,15 @@
+<div class="film-item">
+    <div class="film-box">
+        <div class="film-point">IMDB:{{ film.score }}</div>
+        <div class="film-poster">
+            <a href="/movie/{{ film.id }}"><img
+                    src="{{ url_for("static", filename = "img/" + film.title) + ".jpg" }}"
+                    alt=""></a>
+        </div>
+        <div class="film-title">
+            <div class="film-name"><a href="/movie/{{ film.id }}">{{ film.title }}</a></div>
+            <div class="film-year">{{ film.year }}</div>
+        </div>
+    </div>
+
+</div>

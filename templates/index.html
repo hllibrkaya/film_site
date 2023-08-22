@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div id="content">
+        <div class="title">
+            <span>IMDB TOP 250</span>
+        </div>
+        <div class="film-list">
+            {% for film in top %}
+
+                {% include 'includes/filmitem.html' %}
+
+            {% endfor %}
+        </div>
+        <br>
+        <div class="title">
+            <span>Recently Added</span>
+        </div>
+        <div class="film-list">
+            {% for film in recent %}
+                {% include 'includes/filmitem.html' %}
+            {% endfor %}
+
+        </div>
+        <br>
+        <div class="title">
+            <span>Nostalgia</span>
+        </div>
+        <div class="film-list">
+            {% for film in nostalgia %}
+                {% include 'includes/filmitem.html' %}
+            {% endfor %}
+
+        </div>
+    </div>
+
+    {% include 'includes/footer.html' %}
+
+{% endblock %}

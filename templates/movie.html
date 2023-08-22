@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    {% from "includes/formhelpers.html" import render_field %}
+
+    <div id="m-content">
+        <div class="movie-content">
+
+            <div class="title">
+                <h3 style="text-align: center">{{ movie.title }}</h3>
+            </div>
+            <div class="video-box">
+                <div class="info">
+                    <span id="link-span"><a
+                            href="{{ url_for('category', category=movie.category) }}">{{ movie.category }}</a></span>
+                    <span>{{ movie.year }}</span>
+                    <span>IMDB: {{ movie.score }}</span>
+                </div>
+                <div class="video">
+                    <div class="video-cantainer">
+                        <!-- i didn't add any video because of copyright issues, this is just  mock up -->
+                        <iframe width="876" height="493" src="https://www.youtube.com/embed/AjWfY7SnMBI"
+                                title="24 hours + of pure black screen in HD!" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br><br><br>
+
+        <div id="comment-section">
+            {% if session.logged_in %}
+                <div class="add-comment">
+                    <form method="post">
+                        {{ form.comment(placeholder="Your Message") }}
+                        <button class="comment-submit" type="submit">Add Comment</button>
+                    </form>
+                </div>
+
+            {% endif %}
+            <div class="title">
+                <span>Comments</span>
+            </div>
+            {% for comment in comments %}
+
+                <div class="comment-box">
+                    <div class="user">
+                        <div class="user-info">
+                            <div class="user-name">{{ comment.author }}</div>
+                            <div class="comment-date">({{ comment.comment_date.strftime('%Y-%m-%d %H:%M:%S') }})</div>
+                        </div>
+                        <div class="comment-post">{{ comment.comment }}</div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% include 'includes/footer.html' %}
+{% endblock %}

@@ -1,0 +1,40 @@
+<header>
+    <a href="/"><img id="logo" src="{{ url_for("static", filename="img/logo.png") }}" alt="logo"></a>
+    <nav>
+        <ul class="items">
+            <li class="item"><a class="item-link" href="{{ url_for("movies") }}">Movies</a></li>
+            <li class="item"><a class="item-link" href="{{ url_for("category", category="Action") }}">Action</a></li>
+            <li class="item"><a class="item-link" href="{{ url_for("category", category="Comedy") }}">Comedy</a></li>
+            <li class="item i-dropdown">
+                <a class="item-link dis" href="#">Other</a>
+                <ul class="item-menu">
+                    <li><a class="dropdown-link" href="{{ url_for("category", category="Romance") }}">Romance</a></li>
+                    <li><a class="dropdown-link" href="{{ url_for("category", category="Horror") }}">Horror</a></li>
+                    <li><a class="dropdown-link" href="{{ url_for("category", category="Fantastic") }}">Fantastic</a>
+                    </li>
+                    <li><a class="dropdown-link" href="{{ url_for("category", category="Crime") }}">Crime</a></li>
+                    <li><a class="dropdown-link" href="{{ url_for("category", category="Drama") }}">Drama</a></li>
+                    <li><a class="dropdown-link" href="{{ url_for("category", category="Superhero") }}">Superhero</a>
+                    </li>
+                    <li><a class="dropdown-link" href="{{ url_for("category", category="Animation") }}">Animation</a>
+                    </li>
+                    <li><a class="dropdown-link" href="{{ url_for("category", category="Sci-Fi") }}">Sci-Fi</a></li>
+                </ul>
+            </li>
+            <li class="item"><a class="item-link" href="{{ url_for("about") }}">About Us</a></li>
+        </ul>
+    </nav>
+
+    <nav>
+        <ul class="items">
+
+            {% if session["logged_in"] %}
+                <li class="item"><a class="item-link" href="/logout">Logout</a></li>
+            {% else %}
+                <li class="item"><a class="item-link" href="{{ url_for("login") }}">Login</a></li>
+                <li class="item"><a class="item-link" href="{{ url_for("register") }}">Register</a></li>
+            {% endif %}
+        </ul>
+
+    </nav>
+</header>

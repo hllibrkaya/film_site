@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    {% from "includes/formhelpers.html" import render_field %}
+
+    <div class="register-box">
+
+        <h1>CREATE AN ACCOUNT</h1>
+        <form method="post">
+
+            <p>Name</p>
+            {{ form.name(placeholder="Enter Name") }}
+            {% for error in form.name.errors %}
+                <p class="error-message">{{ error }}</p>
+            {% endfor %}
+            <p>Username</p>
+            {{ form.username(placeholder="Enter Username") }}
+            {% for error in form.username.errors %}
+                <p class="error-message">{{ error }}</p>
+            {% endfor %}
+            <p>Email</p>
+            {{ form.email(placeholder="Enter Email") }}
+            {% for error in form.email.errors %}
+                <p class="error-message">{{ error }}</p>
+            {% endfor %}
+            <p>Gender</p>
+            {{ form.gender }}
+            <p>Age</p>
+            {{ form.age(placeholder="Enter Age") }}
+            {% for error in form.age.errors %}
+                <p class="error-message">{{ error }}</p>
+            {% endfor %}
+            <p>Password</p>
+            {{ form.password(placeholder="Enter Pasword") }}
+            {% for error in form.password.errors %}
+                <p class="error-message">{{ error }}</p>
+            {% endfor %}
+            <p>Confirm</p>
+            {{ form.confirm(placeholder="Confirm Pasword") }}
+            <input type="submit" value="Register">
+            <a href="/login">Have already an account?</a>
+
+        </form>
+
+    </div>
+
+{% endblock %}
