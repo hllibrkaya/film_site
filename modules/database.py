@@ -65,7 +65,7 @@ def movie_categories(category, offset=0, per_page=24):
     return films
 
 
-# checking whether the entered username or email address is already
+# checking whether the entered username or email address is already used
 def unique_control(username, email):
     cursor = mysql.connection.cursor()
     query = "SELECT * FROM users WHERE username = %s OR email = %s"
