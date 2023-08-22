@@ -52,4 +52,8 @@ Cinemazing is a dynamic movie website that allows users to explore, search, and 
 - **Authentication**: Flask-Login
 - **Pagination**: Flask-Paginate
 
+## Screenshots
+![movies](https://github.com/hllibrkaya/film_site/assets/114361857/038cf0f0-5fa5-49f5-bb7b-cf855aeedcc1)
+![login](https://github.com/hllibrkaya/film_site/assets/114361857/fd266903-e45e-4eff-b689-2d33fe730d36)
+![register](https://github.com/hllibrkaya/film_site/assets/114361857/f2715d94-fe5c-475d-b83e-508d8f07febd)
 
